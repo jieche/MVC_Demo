@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<style type="text/css">
+	body{text-align: center;margin: 20px 10px;}
+	table{
+		width: 600px;
+		font-family: verdana,arial,sans-serif;
+		font-size:11px;
+		color:#333333;
+		margin: 1px auto;
+		border-width: 1px;
+		border-color: #666666;
+		border-collapse: collapse;
+	}
+	/*table th {
+		border-width: 1px;
+		padding: 8px;
+		border-style: solid;
+		border-color: #666666;
+		background-color: #dedede;
+	}*/
+	table td {
+		border-width: 1px;
+		padding: 8px;
+		border-style: solid;
+		border-color: #666666;
+		background-color: #ffffff;
+	}
+	</style>
+	<script type="text/javascript"></script>
+</head>
+<body>
+
+<form name="form1" action="?c=admin&a=Update" method="post">
+	 <!--将当前要修改的用户的ID存储在一个隐藏域中，以便提交修改后的表单的时候
+	 一并又发回（传回）服务器，以据此作为修改的用户的id的查询条件。-->
+	 <input type="hidden" name="id" value='<?php echo $book['id']; ?>'>
+
+	<table ><caption>修改信息</caption>
+  <tr>
+    <td class="biaoti"> 用户名:</td>
+    <td class="neirong"><input type="text" name="admin_name" value='<?php echo $book['admin_name']; ?>'><br/> </td>
+  </tr>
+  <tr>
+    <td class="biaoti">密码:</td>
+    <td class="neirong"><input type="text" name="admin_pass" value='<?php echo $book['admin_pass']; ?>'><br/></td>
+  </tr>
+  
+</table>
+
+	<input type="submit" value="提交" >
+</form>
+</body>
+</html>

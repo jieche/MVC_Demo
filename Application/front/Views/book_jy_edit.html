@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<style type="text/css"></style>
+	<script type="text/javascript"></script>
+</head>
+<body>
+
+<form name="form1" action="?c=BookJY&a=UpdateBookJY" method="post">
+	 <h1>添加数据</h1>
+	 <!--将当前要修改的用户的ID存储在一个隐藏域中，以便提交修改后的表单的时候
+	 一并又发回（传回）服务器，以据此作为修改的用户的id的查询条件。-->
+	 <input type="hidden" name="jy_id" value='<?php echo $book['jy_id']; ?>'>
+	 
+	 到货id号:<input type="text" name="dh_id" value='<?php echo $book['dh_id']; ?>'><br/>
+	 借阅日期:<input type="text" name="JYRQ" value='<?php echo $book['JYRQ']; ?>'><br/>
+	 借阅人id:<input type="text" name="JYR_id" value='<?php echo $book['JYR_id']; ?>'><br/>
+	 归还日期:<input type="text" name="GHRQ" value='<?php echo $book['GHRQ']; ?>'><br/>
+	 备注:<input type="text" name="BZ" value='<?php echo $book['BZ']; ?>'><br/>
+
+
+
+	<input type="submit" value="提交" >
+</form>
+</body>
+</html>

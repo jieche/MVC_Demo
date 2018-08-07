@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<style type="text/css">
+	body,table,tr,td,caption{padding: 0;margin: 0;}
+	body{text-align: center;}
+	table{width: 400px; border: 2px solid #888888;text-align: center;margin: 0 auto;line-height: 30px; }
+	table caption{font-size:20px;font-family:微软雅黑;font-weight:bold;}
+	table tr {border: 2px solid red;}
+	table tr td{border: 1px solid #686868;}
+	table tr td.biaoti{font-size:16px;font-family:黑体;font-weight:bold;text-align: right;}
+	table tr td.neirong{font-size:16px;font-family:仿宋;font-weight:bold;text-align: left;}
+
+/*<table>
+	<caption></caption>
+	<tr>
+		<td class="biaoti"></td>
+		<td class="neirong"></td>
+	</tr>
+
+</table>*/
+
+
+	</style>
+	<script type="text/javascript"></script>
+</head>
+<body>
+<table>
+	<caption>借阅ID号: <font color=red><?php echo $data['jy_id'] ?></font> 的详细信息如下：</caption>
+	<tr>
+		<td class="biaoti">到货id号:</td>
+		<td class="neirong"><?php echo $data['dh_id'] ?></td>
+	</tr><tr>
+		<td class="biaoti">借阅日期:</td>
+		<td class="neirong"><?php echo $data['JYRQ'] ?></td>
+	</tr><tr>
+		<td class="biaoti">借阅人id:</td>
+		<td class="neirong"><?php echo $data['JYR_id'] ?></td>
+	</tr><tr>
+		<td class="biaoti">归还日期:</td>
+		<td class="neirong"><?php echo $data['GHRQ'] ?></td>
+	</tr><tr>
+		<td class="biaoti">备注:</td>
+		<td class="neirong"><?php echo $data['BZ'] ?></td>
+	</tr>
+
+</table>
+<hr />
+<a href='?c=BookJY&a=Index'>返回</a>
+</body>
+</html>

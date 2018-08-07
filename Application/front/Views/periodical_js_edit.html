@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<style type="text/css"></style>
+	<script type="text/javascript"></script>
+</head>
+<body>
+
+<form name="form1" action="?c=periodicalJS&a=Update" method="post">
+	 <h1>添加数据</h1>
+	 <!--将当前要修改的用户的ID存储在一个隐藏域中，以便提交修改后的表单的时候
+	 一并又发回（传回）服务器，以据此作为修改的用户的id的查询条件。-->
+	 <input type="hidden" name="js_id" value='<?php echo $book['js_id']; ?>'>
+	 
+	 期刊订购号:<input type="text" name="QKDGH" value='<?php echo $book['QKDGH']; ?>'><br/>
+	 减少日期:<input type="text" name="JSRQ" value='<?php echo $book['JSRQ']; ?>'><br/>
+	 减少原因:<input type="text" name="JSYY" value='<?php echo $book['JSYY']; ?>'><br/>
+	 减少结果:<input type="text" name="JSJG" value='<?php echo $book['JSJG']; ?>'><br/>
+	 经手人职工号:<input type="text" name="JSRZGH" value='<?php echo $book['JSRZGH']; ?>'><br/>
+	
+
+	<input type="submit" value="提交" >
+</form>
+</body>
+</html>

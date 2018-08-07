@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<style type="text/css">
+ 	body{text-align: center;margin: 40px 30px;}
+	table{
+		width: 600px;
+		font-family: verdana,arial,sans-serif;
+		font-size:11px;
+		color:#333333;
+		margin: 1px auto;
+		border-width: 1px;
+		border-color: #666666;
+		border-collapse: collapse;
+	}
+	table caption{
+		border-width: 1px;
+		padding: 8px;
+		border-style: solid;
+		font-family: 微软雅黑;
+		font-size:16px;
+		border-color: #666666;
+		background-color: #dedede;
+	}
+	table td {
+		border-width: 1px;
+		padding: 8px;
+		border-style: solid;
+		border-color: #666666;
+		background-color: #ffffff;
+	}
+	/* <table>
+	 	<caption>添加数据</caption>
+	 	<tr>
+	 		<td></td>
+	 		<td></td>
+	 	</tr><tr>
+	 		<td></td>
+	 		<td></td>
+	 	</tr>
+
+	 </table>
+	 */
+
+	</style>
+	<script type="text/javascript"></script>
+</head>
+<body>
+
+<form name="form1" action="?c=PeriodicalJY&a=Add" method="post">
+	 <table>
+	 	<caption>添加数据</caption>
+	 	<tr>
+	 		<td>期刊订购号:</td>
+	 		<td><input type="text" name="QKDGH" ></td>
+	 	</tr><tr>
+	 		<td>借阅日期:</td>
+	 		<td><input type="text" name="JYRQ" ></td>
+	 	</tr><tr>
+	 		<td>借阅人id:</td>
+	 		<td><input type="text" name="JYR_id"></td>
+	 	</tr><tr>
+	 		<td>归还日期:</td>
+	 		<td><input type="text" name="GHRQ"></td>
+	 	</tr><tr>
+	 		<td>备注:</td>
+	 		<td><input type="text" name="BZ"></td>
+	 	</tr>
+
+	 </table>
+	<input type="submit" value="提交" >
+</form>
+</body>
+</html>

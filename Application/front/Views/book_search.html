@@ -1,0 +1,121 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>网页标题</title>
+    <meta name="keywords" content="关键字列表" />
+    <meta name="description" content="网页描述" />
+    <link rel="stylesheet" type="text/css" href="" />
+
+
+
+
+</head>
+<body>
+<form name="form1" action="?c=book&a=Search" method="post">
+         <input name="Sea" value='填写关键字'>
+<input type="submit" value="Search" >
+</form>
+
+
+
+
+
+
+
+产品列表：
+
+
+<table border='1' class='tb'>
+   <tr class='b1'>
+    <td>图书编号</td>
+    <td>图书条形码</td>
+    <td>正标题</td>
+    <td>并列标题</td>
+    <td>副标题</td>
+    <td>检索关键字</td>
+    <td>出版号</td>
+    <td>第一作者</td>
+    <td>其他作者</td>
+    <td>价格</td>
+    <td>文献类型码</td>
+    <td>装订码</td>
+    <td>分类号</td>
+
+    <td>中国语种码</td>
+    <td>语种码</td>
+    <td>开本</td>
+    <td>页数</td>
+    <td>版次</td>
+    <td>附件名称</td>
+    <td>丛书名称</td>
+    <td>丛书编者</td>
+    <td>出版社</td>
+    <td>出版社级别码</td>
+
+    <td>出版地</td>
+    <td>出版日期</td>
+    <td>发行单位</td>
+    <td>图书状态码</td>
+    <!-- <td>备注</td> -->
+   </tr>
+    <?php
+    foreach( $data1 as  $key => $rec )
+    {
+    ?>
+    <tr>
+        <td><?php echo $rec['TSBH']; ?></td>
+        <td><?php echo $rec['TSTXM']; ?></td>
+        <td class='t2'><?php echo $rec['ZBT']; ?></td>
+        <td><?php echo $rec['BLBT']; ?></td>
+        <td><?php echo $rec['FBT']; ?></td>
+        <td><?php echo $rec['JSGJZ']; ?></td>
+        <td><?php echo $rec['CBH']; ?></td>
+        <td><?php echo $rec['DYZZ']; ?></td>
+        <td><?php echo $rec['QTZZ']; ?></td>
+        <td class='t1'><?php echo $rec['JG']; ?></td>
+
+        <td><?php echo $rec['WXLXM']; ?></td>
+        <td><?php echo $rec['ZDM']; ?></td>
+        <td><?php echo $rec['FLH']; ?></td>
+
+        <td><?php echo $rec['ZGYZM']; ?></td>
+
+        <td><?php echo $rec['YZM']; ?></td>
+        <td><?php echo $rec['KB']; ?></td>
+        <td><?php echo $rec['YS']; ?></td>
+        <td><?php echo $rec['BC']; ?></td>
+        <td><?php echo $rec['FJMC']; ?></td>
+        <td><?php echo $rec['CSMC']; ?></td>
+        <td><?php echo $rec['CSBZ']; ?></td>
+        <td><?php echo $rec['CBS']; ?></td>
+        <td><?php echo $rec['CBSJBM']; ?></td>
+
+        <td><?php echo $rec['CBD']; ?></td>
+        <td><?php echo $rec['CBRQ']; ?></td>
+        <td><?php echo $rec['FXDW']; ?></td>
+        <td><?php echo $rec['TSZTM']; ?></td>
+        <!-- <td><?php echo $rec['BZ']; ?></td> -->
+
+        <!-- <td class='t1'><?php echo $rec['TSTXM']; ?></td>
+        <td><?php echo $rec['ZBT']; ?></td>
+        <td class='t2'><?php echo $rec['DYZZ']; ?></td>
+        <td><?php echo $rec['JG']; ?></td> -->
+        
+       
+        <td>
+            <a href='?c=Book&a=detail&TSBH=<?php echo $rec['TSBH']; ?>' >详细</a>
+        </td>
+        
+    </tr>
+    <?php
+    }
+    ?>
+</table>
+<br />
+
+</body>
+</html>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<style type="text/css">
+	body{text-align: center;margin: 20px 10px;}
+	table{
+		width: 600px;
+		font-family: verdana,arial,sans-serif;
+		font-size:11px;
+		color:#333333;
+		margin: 1px auto;
+		border-width: 1px;
+		border-color: #666666;
+		border-collapse: collapse;
+	}
+	/*table th {
+		border-width: 1px;
+		padding: 8px;
+		border-style: solid;
+		border-color: #666666;
+		background-color: #dedede;
+	}*/
+	table td {
+		border-width: 1px;
+		padding: 8px;
+		border-style: solid;
+		border-color: #666666;
+		background-color: #ffffff;
+	}
+	</style>
+	<script type="text/javascript"></script>
+</head>
+<body>
+
+<form name="form1" action="?c=book&a=UpdateBook" method="post">
+	 <!--将当前要修改的用户的ID存储在一个隐藏域中，以便提交修改后的表单的时候
+	 一并又发回（传回）服务器，以据此作为修改的用户的id的查询条件。-->
+	 <input type="hidden" name="TSBH" value='<?php echo $book['TSBH']; ?>'>
+
+	<table ><caption>修改图书信息</caption>
+  <tr>
+    <td class="biaoti"> 图书条形码:</td>
+    <td class="neirong"><input type="text" name="TSTXM" value='<?php echo $book['TSTXM']; ?>'><br/> </td>
+  </tr>
+  <tr>
+    <td class="biaoti">正标题:</td>
+    <td class="neirong"><input type="text" name="ZBT" value='<?php echo $book['ZBT']; ?>'><br/></td>
+  </tr>
+  <tr>
+    <td class="biaoti">并列标题:</td>
+    <td class="neirong"><input type="text" name="BLBT" value='<?php echo $book['BLBT']; ?>'><br/></td>
+  </tr>
+  <tr>
+    <td class="biaoti">副标题:</td>
+    <td class="neirong"><input type="text" name="FBT" value='<?php echo $book['FBT']; ?>'><br/></td>
+  </tr>
+  <tr>
+    <td class="biaoti">检索关键字:</td>
+    <td class="neirong"><input type="text" name="JSGJZ" value='<?php echo $book['JSGJZ']; ?>'><br/></td>
+  </tr>
+  <tr>
+    <td class="biaoti">出版号:</td>
+    <td class="neirong"><input type="text" name="CBH" value='<?php echo $book['CBH']; ?>'><br/></td>
+  </tr>
+  <tr>
+    <td class="biaoti">第一作者:</td>
+    <td class="neirong"><input type="text" name="DYZZ" value='<?php echo $book['DYZZ']; ?>'><br/></td>
+  </tr>
+  <tr>
+    <td class="biaoti">其他作者:</td>
+    <td class="neirong"><input type="text" name="QTZZ" value='<?php echo $book['QTZZ']; ?>'><br/></td>
+  </tr>
+  <tr>
+    <td class="biaoti">价格:</td>
+    <td class="neirong"><input type="text" name="JG" value='<?php echo $book['JG']; ?>'><br/></td>
+  </tr>
+  <tr>
+    <td class="biaoti">文献类型码:</td>
+    <td class="neirong"><input type="text" name="WXLXM" value='<?php echo $book['WXLXM']; ?>'><br/></td>
+  </tr><tr>
+    <td class="biaoti">装订码:</td>
+    <td class="neirong"><input type="text" name="ZDM" value='<?php echo $book['ZDM']; ?>'><br/></td>
+  </tr><tr>
+    <td class="biaoti">分类号:</td>
+    <td class="neirong"><input type="text" name="FLH" value='<?php echo $book['FLH']; ?>'><br/></td>
+  </tr><tr>
+    <td class="biaoti">中国语种码:</td>
+    <td class="neirong"><input type="text" name="ZGYZM" value='<?php echo $book['ZGYZM']; ?>'><br/></td>
+  </tr><tr>
+    <td class="biaoti">语种码:</td>
+    <td class="neirong"><input type="text" name="YZM" value='<?php echo $book['YZM']; ?>'><br/></td>
+  </tr><tr>
+    <td class="biaoti">开本:</td>
+    <td class="neirong"><input type="text" name="KB" value='<?php echo $book['KB']; ?>'><br/></td>
+  </tr><tr>
+    <td class="biaoti">页数:</td>
+    <td class="neirong"><input type="text" name="YS" value='<?php echo $book['YS']; ?>'><br/></td>
+  </tr><tr>
+    <td class="biaoti">版次:</td>
+    <td class="neirong"><input type="text" name="BC" value='<?php echo $book['BC']; ?>'><br/></td>
+  </tr><tr>
+    <td class="biaoti">附件名称:</td>
+    <td class="neirong"><input type="text" name="FJMC" value='<?php echo $book['FJMC']; ?>'><br/></td>
+  </tr><tr>
+    <td class="biaoti">丛书名称:</td>
+    <td class="neirong"><input type="text" name="CSMC" value='<?php echo $book['CSMC']; ?>'><br/></td>
+  </tr><tr>
+    <td class="biaoti">丛书编者:</td>
+    <td class="neirong"><input type="text" name="CSBZ" value='<?php echo $book['CSBZ']; ?>'><br/></td>
+  </tr><tr>
+    <td class="biaoti">出版社:</td>
+    <td class="neirong"><input type="text" name="CBS" value='<?php echo $book['CBS']; ?>'><br/></td>
+  </tr><tr>
+    <td class="biaoti">出版社级别码:</td>
+    <td class="neirong"><input type="text" name="CBSJBM" value='<?php echo $book['CBSJBM']; ?>'><br/></td>
+  </tr>
+  <tr>
+    <td class="biaoti">出版地:</td>
+    <td class="neirong"><input type="text" name="CBD" value='<?php echo $book['CBD']; ?>'><br/></td>
+  </tr>
+   <tr>
+    <td class="biaoti">出版日期:</td>
+    <td class="neirong"><input type="text" name="CBRQ" value='<?php echo $book['CBRQ']; ?>'><br/></td>
+  </tr> <tr>
+    <td class="biaoti">发行单位:</td>
+    <td class="neirong"><input type="text" name="FXDW" value='<?php echo $book['FXDW']; ?>'><br/></td>
+  </tr> <tr>
+    <td class="biaoti">图书状态码:</td>
+    <td class="neirong"><input type="text" name="TSZTM" value='<?php echo $book['TSZTM']; ?>'><br/></td>
+  </tr> <tr>
+    <td class="biaoti">备注:</td>
+     <td class="neirong">
+      <textarea rows="3" cols="20" name="BZ">
+      <?php echo $book['BZ']; ?>
+	 </textarea>
+	  <br/></td>
+    
+  </tr>
+</table>
+
+	<input type="submit" value="提交" >
+</form>
+</body>
+</html>

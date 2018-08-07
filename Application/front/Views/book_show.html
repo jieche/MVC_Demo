@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<style type="text/css"></style>
+	<script type="text/javascript"></script>
+</head>
+<body>
+
+<form name="form1" action="?c=book&a=Updatebook" method="post">
+	 <h1>添加数据</h1>
+	 <!--将当前要修改的用户的ID存储在一个隐藏域中，以便提交修改后的表单的时候
+	 一并又发回（传回）服务器，以据此作为修改的用户的id的查询条件。-->
+	 <input type="hidden" name="TSBH" value='<?php echo $book['TSBH']; ?>'>
+	 
+	 图书条形码:<input type="text" name="TSTXM" value='<?php echo $book['TSTXM']; ?>'><br/>
+	 正标题:<input type="text" name="ZBT" value='<?php echo $book['ZBT']; ?>'><br/>
+	 并列标题:<input type="text" name="BLBT" value='<?php echo $book['BLBT']; ?>'><br/>
+	 副标题:<input type="text" name="FBT" value='<?php echo $book['FBT']; ?>'><br/>
+	 检索关键字:<input type="text" name="JSGJZ" value='<?php echo $book['JSGJZ']; ?>'><br/>
+	 出版号:<input type="text" name="CBH" value='<?php echo $book['CBH']; ?>'><br/>
+	 第一作者:<input type="text" name="DYZZ" value='<?php echo $book['DYZZ']; ?>'><br/>
+	 其他作者:<input type="text" name="QTZZ" value='<?php echo $book['QTZZ']; ?>'><br/>
+	 价格:<input type="text" name="JG" value='<?php echo $book['JG']; ?>'><br/>
+
+	 文献类型码:<input type="text" name="WXLXM" value='<?php echo $book['WXLXM']; ?>'><br/>
+	 装订码:<input type="text" name="ZDM" value='<?php echo $book['ZDM']; ?>'><br/>
+	 分类号:<input type="text" name="FLH" value='<?php echo $book['FLH']; ?>'><br/>
+
+	 中国语种码:<input type="text" name="ZGYZM" value='<?php echo $book['ZGYZM']; ?>'><br/>
+
+	 语种码:<input type="text" name="YZM" value='<?php echo $book['YZM']; ?>'><br/>
+	 开本:<input type="text" name="KB" value='<?php echo $book['KB']; ?>'><br/>
+	 页数:<input type="text" name="YS" value='<?php echo $book['YS']; ?>'><br/>
+	 版次:<input type="text" name="BC" value='<?php echo $book['BC']; ?>'><br/>
+	 附件名称:<input type="text" name="FJMC" value='<?php echo $book['FJMC']; ?>'><br/>
+	 丛书名称:<input type="text" name="CSMC" value='<?php echo $book['CSMC']; ?>'><br/>
+	 丛书编者:<input type="text" name="CSBZ" value='<?php echo $book['CSBZ']; ?>'><br/>
+	 出版社:<input type="text" name="CBS" value='<?php echo $book['CBS']; ?>'><br/>
+	 出版社级别码:<input type="text" name="CBSJBM" value='<?php echo $book['CBSJBM']; ?>'><br/>
+
+	 出版地:<input type="text" name="CBD" value='<?php echo $book['CBD']; ?>'><br/>
+	 出版日期:<input type="text" name="CBRQ" value='<?php echo $book['CBRQ']; ?>'><br/>
+	 发行单位:<input type="text" name="FXDW" value='<?php echo $book['FXDW']; ?>'><br/>
+	 图书状态码:<input type="text" name="TSZTM" value='<?php echo $book['TSZTM']; ?>'><br/>
+	 备注:<input type="text" name="BZ" value='<?php echo $book['BZ']; ?>'><br/>
+	
+
+	<input type="submit" value="提交" >
+</form>
+</body>
+</html>

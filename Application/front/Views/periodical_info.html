@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<style type="text/css">
+	body,table,tr,td,caption{padding: 0;margin: 0;}
+	body{text-align: center;}
+	table{width: 400px; border: 2px solid #888888;text-align: center;margin: 0 auto;line-height: 30px; }
+	table caption{font-size:20px;font-family:微软雅黑;font-weight:bold;}
+	table tr {border: 2px solid red;}
+	table tr td{border: 1px solid #686868;}
+	table tr td.biaoti{font-size:16px;font-family:黑体;font-weight:bold;text-align: right;}
+	table tr td.neirong{font-size:16px;font-family:仿宋;font-weight:bold;text-align: left;}
+
+/*<table>
+	<caption></caption>
+	<tr>
+		<td class="biaoti"></td>
+		<td class="neirong"></td>
+	</tr>
+
+</table>*/
+
+
+	</style>
+	<script type="text/javascript"></script>
+</head>
+<body>
+<table>
+	<caption>编号为： <font color=red><?php echo $data['QKBH'] ?></font> 的详细信息如下：</caption>
+	<tr>
+		<td class="biaoti">期刊条形码:</td>
+		<td class="neirong"><?php echo $data['QKTXM'] ?></td>
+	</tr><tr>
+		<td class="biaoti"> 期刊中文名称:</td>
+		<td class="neirong"><?php echo $data['QKZWMC'] ?></td>
+	</tr><tr>
+		<td class="biaoti">期刊英文名称:</td>
+		<td class="neirong"><?php echo $data['QKYWMC'] ?></td>
+	</tr><tr>
+		<td class="biaoti"> 出版号:</td>
+		<td class="neirong"><?php echo $data['CBH'] ?></td>
+	</tr><tr>
+		<td class="biaoti">编辑部:</td>
+		<td class="neirong"><?php echo $data['BJB'] ?></td>
+	</tr><tr>
+		<td class="biaoti">总编:</td>
+		<td class="neirong"><?php echo $data['ZB'] ?></td>
+	</tr><tr>
+		<td class="biaoti"> 单价:</td>
+		<td class="neirong"><?php echo $data['DJ'] ?></td>
+	</tr><tr>
+		<td class="biaoti"> 创刊年月:</td>
+		<td class="neirong"><?php echo $data['CKNY'] ?></td>
+	</tr><tr>
+		<td class="biaoti"> 年号:</td>
+		<td class="neirong"><?php echo $data['NH'] ?></td>
+	</tr><tr>
+		<td class="biaoti">卷号:</td>
+		<td class="neirong"><?php echo $data['JH'] ?></td>
+	</tr><tr>
+		<td class="biaoti">期号:</td>
+		<td class="neirong"><?php echo $data['QH'] ?></td>
+	</tr><tr>
+		<td class="biaoti">总期号:</td>
+		<td class="neirong"><?php echo $data['ZQH'] ?></td>
+	</tr><tr>
+		<td class="biaoti"> 分类号:</td>
+		<td class="neirong"><?php echo $data['FLH'] ?></td>
+	</tr><tr>
+		<td class="biaoti">中国语种码:</td>
+		<td class="neirong"><?php echo $data['ZGYZM'] ?></td>
+	</tr><tr>
+		<td class="biaoti">语种码:</td>
+		<td class="neirong"><?php echo $data['YZM'] ?></td>
+	</tr><tr>
+		<td class="biaoti">期刊类别码:</td>
+		<td class="neirong"><?php echo $data['QKLBM'] ?></td>
+	</tr><tr>
+		<td class="biaoti">期刊状态码:</td>
+		<td class="neirong"><?php echo $data['QKZTM'] ?></td>
+	</tr>
+
+</table>
+<hr />
+<a href='?c=Periodical&a=Index'>返回</a>
+</body>
+</html>

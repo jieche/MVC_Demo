@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	
+	<link rel="stylesheet" type="text/css" href="images/001.css">
+	<script type="text/javascript"></script>
+</head>
+<body>
+
+<hr />
+
+<a href='?c=PeriodicalJS&a=ShowForm' >添加</a>
+列表：
+
+
+<table border='1' class="tb">
+	<tr class="b1">
+   	<th>减少id号</th>
+   	<th>期刊订购号</th>
+   	<th>减少日期</th>
+   	<th>减少原因</th>
+   	<th>减少结果</th>
+   	<th>经手人职工号</th>
+   	<th colspan="3">  操作</th>
+   </tr>
+	<?php
+	foreach( $data1 as  $key => $rec )
+	{
+	?>
+	<tr>
+		<td><?php echo $rec['js_id']; ?></td>
+		<td class='t1'><?php echo $rec['QKDGH']; ?></td>
+		<td><?php echo $rec['JSRQ']; ?></td>
+		<td class='t2'><?php echo $rec['JSYY']; ?></td>
+		<td><?php echo $rec['JSJG']; ?></td>
+		<td><?php echo $rec['JSRZGH']; ?></td>
+	
+		
+		<td>
+			<a href='?c=PeriodicalJS&a=del&js_id=<?php echo $rec['js_id']; ?>' onclick='return queren()'>删除</a>
+		</td>
+		<td>
+			<a href='?c=PeriodicalJS&a=detail&js_id=<?php echo $rec['js_id']; ?>' >详细</a>
+		</td>
+		<td>
+			<a href='?c=PeriodicalJS&a=Edit&js_id=<?php echo $rec['js_id']; ?>' >修改</a>
+		</td>
+	</tr>
+	<?php
+	}
+	?>
+<tr > <td colspan="9" align="center">
+          <a href="?c=PeriodicalJS&a=Index&page=1">首页</a>
+          <a href="?c=PeriodicalJS&a=Index&page=<?php echo $prev;?>">上一页</a>
+          <a href="?c=PeriodicalJS&a=Index&page=<?php echo "$next";?>">下一页</a>
+          <a href="?c=PeriodicalJS&a=Index&page=<?php echo $pages;?>">尾页</a>
+          <a href=""></a>
+	 </td></tr>
+</table>
+<br />
+<hr />
+
+<br />
+当前总数：<?php echo $data2;?>
+<hr />
+
+</body>
+</html>
+<script>
+	function queren(){
+		return window.confirm("你真的要删除吗？");
+	}
+</script>

@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="images/001.css">
+</head>
+<body>
+<hr />
+<a href='?c=Book&a=ShowForm' >添加新书</a>
+<a href='?c=Book&a=SearchF' >查询</a>
+产品列表：
+<table border='1' class='tb'>
+   <tr class='b1'>
+   	<th>图书编号</th>
+   	<th>图书条形码</th>
+   	<th>正标题</th>
+   	<th>并列标题</th>
+   	<th>副标题</th>
+   	<th>检索关键字</th>
+   	<th>出版号</th>
+   	<th>第一作者</th>
+   	<th>其他作者</th>
+   	<th>价格</th>
+   	<th>文献类型码</th>
+   	<th>装订码</th>
+   	<th>分类号</th>
+
+   	<th>中国语种码</th>
+   	<th>语种码</th>
+   	<th>开本</th>
+   	<th>页数</th>
+   	<th>版次</th>
+   	<th>附件名称</th>
+   	<th>丛书名称</th>
+   	<th>丛书编者</th>
+   	<th>出版社</th>
+   	<th>出版社级别码</th>
+
+   	<th>出版地</th>
+   	<th>出版日期</th>
+   	<th>发行单位</th>
+   	<th>图书状态码</th>
+   	<!-- <th>备注</th> -->
+   	<th colspan="3">  操作</th>
+   </tr>
+	<?php
+	foreach( $data1 as  $key => $rec )
+	{
+	?>
+	<tr>
+		<td><?php echo $rec['TSBH']; ?></td>
+		<td><?php echo $rec['TSTXM']; ?></td>
+		<td class='t2'><?php echo $rec['ZBT']; ?></td>
+		<td><?php echo $rec['BLBT']; ?></td>
+		<td><?php echo $rec['FBT']; ?></td>
+		<td><?php echo $rec['JSGJZ']; ?></td>
+		<td><?php echo $rec['CBH']; ?></td>
+		<td><?php echo $rec['DYZZ']; ?></td>
+		<td><?php echo $rec['QTZZ']; ?></td>
+		<td class='t1'><?php echo $rec['JG']; ?></td>
+
+		<td><?php echo $rec['WXLXM']; ?></td>
+		<td><?php echo $rec['ZDM']; ?></td>
+		<td><?php echo $rec['FLH']; ?></td>
+
+		<td><?php echo $rec['ZGYZM']; ?></td>
+
+		<td><?php echo $rec['YZM']; ?></td>
+		<td><?php echo $rec['KB']; ?></td>
+		<td><?php echo $rec['YS']; ?></td>
+		<td><?php echo $rec['BC']; ?></td>
+		<td><?php echo $rec['FJMC']; ?></td>
+		<td><?php echo $rec['CSMC']; ?></td>
+		<td><?php echo $rec['CSBZ']; ?></td>
+		<td><?php echo $rec['CBS']; ?></td>
+		<td><?php echo $rec['CBSJBM']; ?></td>
+
+		<td><?php echo $rec['CBD']; ?></td>
+		<td><?php echo $rec['CBRQ']; ?></td>
+		<td><?php echo $rec['FXDW']; ?></td>
+		<td><?php echo $rec['TSZTM']; ?></td>
+		<!-- <td><?php echo $rec['BZ']; ?></td> -->
+
+		<!-- <td class='t1'><?php echo $rec['TSTXM']; ?></td>
+		<td><?php echo $rec['ZBT']; ?></td>
+		<td class='t2'><?php echo $rec['DYZZ']; ?></td>
+		<td><?php echo $rec['JG']; ?></td> -->
+		
+		<td>
+			<a href='?c=Book&a=del&TSBH=<?php echo $rec['TSBH']; ?>' onclick='return queren()'>删除</a>
+		</td>
+		<td>
+			<a href='?c=Book&a=detail&TSBH=<?php echo $rec['TSBH']; ?>' >详细</a>
+		</td>
+		<td>
+			<a href='?c=Book&a=Edit&TSBH=<?php echo $rec['TSBH']; ?>' >修改</a>
+		</td>
+	</tr>
+	<?php
+	}
+	?>
+
+	<tr > <td colspan="100" align="center">
+          <a href="?c=Book&a=Index&page=1">首页</a>
+          <a href="?c=Book&a=Index&page=<?php echo $prev;?>">上一页</a>
+          <a href="?c=Book&a=Index&page=<?php echo "$next";?>">下一页</a>
+          <a href="?c=Book&a=Index&page=<?php echo $pages;?>">尾页</a>
+          <a href=""></a>
+	 </td> </tr>
+</table>
+<br />
+<hr />
+
+<br />
+当前总数：<?php echo $data2;?>
+<hr />
+</body>
+</html>
+<script>
+	function queren(){
+		return window.confirm("你真的要删除吗？");
+	}
+</script>

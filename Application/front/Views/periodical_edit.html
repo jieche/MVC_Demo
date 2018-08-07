@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<style type="text/css"></style>
+	<script type="text/javascript"></script>
+</head>
+<body>
+
+<form name="form1" action="?c=periodical&a=Update" method="post">
+	 <h1>添加数据</h1>
+	 <!--将当前要修改的用户的ID存储在一个隐藏域中，以便提交修改后的表单的时候
+	 一并又发回（传回）服务器，以据此作为修改的用户的id的查询条件。-->
+	 <input type="hidden" name="QKBH" value='<?php echo $book['QKBH']; ?>'>
+	 
+	 期刊条形码:<input type="text" name="QKTXM" value='<?php echo $book['QKTXM']; ?>'><br/>
+	 期刊中文名称:<input type="text" name="QKZWMC" value='<?php echo $book['QKZWMC']; ?>'><br/>
+	 期刊英文名称:<input type="text" name="QKYWMC" value='<?php echo $book['QKYWMC']; ?>'><br/>
+	 出版号:<input type="text" name="CBH" value='<?php echo $book['CBH']; ?>'><br/>
+	 编辑部:<input type="text" name="BJB" value='<?php echo $book['BJB']; ?>'><br/>
+	 总编:<input type="text" name="ZB" value='<?php echo $book['ZB']; ?>'><br/>
+	 单价:<input type="text" name="DJ" value='<?php echo $book['DJ']; ?>'><br/>
+	 创刊年月:<input type="text" name="CKNY" value='<?php echo $book['CKNY']; ?>'><br/>
+	 年号:<input type="text" name="NH" value='<?php echo $book['NH']; ?>'><br/>
+
+	 卷号:<input type="text" name="JH" value='<?php echo $book['JH']; ?>'><br/>
+	 期号:<input type="text" name="QH" value='<?php echo $book['QH']; ?>'><br/>
+	 总期号:<input type="text" name="ZQH" value='<?php echo $book['ZQH']; ?>'><br/>
+	 分类号:<input type="text" name="FLH" value='<?php echo $book['FLH']; ?>'><br/>
+
+	 中国语种码:<input type="text" name="ZGYZM" value='<?php echo $book['ZGYZM']; ?>'><br/>
+
+	  语种码:<input type="text" name="YZM" value='<?php echo $book['YZM']; ?>'><br/>
+	 期刊类别码:<input type="text" name="QKLBM" value='<?php echo $book['QKLBM']; ?>'><br/>
+	 期刊状态码:<input type="text" name="QKZTM" value='<?php echo $book['QKZTM']; ?>'><br/>
+	 
+	
+
+	<input type="submit" value="提交" >
+</form>
+</body>
+</html>

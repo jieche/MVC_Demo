@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<link rel="stylesheet" type="text/css" href="images/001.css">
+	
+	<script type="text/javascript"></script>
+</head>
+<body>
+
+<hr />
+
+<a href='?c=Periodical&a=ShowForm' >添加</a>
+列表：
+
+
+<table border='1' class="tb">
+<tr  class="b1">
+   	<th>期刊编号</th>
+   	<th>期刊条形码</th>
+   	<th>期刊中文名称</th>
+   	<th>期刊英文名称</th>
+   	<th>出版号</th>
+   	<th>编辑部</th>
+   	<th>总编</th>
+   	<th>单价</th>
+   	<th>创刊年月</th>
+   	<th>年号</th>
+   	<th>卷号</th>
+   	<th>期号</th>
+   	<th>总期号</th>
+
+   	<th>分类号</th>
+   	<th>中国语种码</th>
+   	<th>语种码</th>
+   	<th>期刊类别码</th>
+   	<!-- <th>期刊状态码</th> -->
+   	<th colspan="3">  操作</th>
+   </tr>
+	<?php
+	foreach( $data1 as  $key => $rec )
+	{
+	?>
+	<tr>
+		<td><?php echo $rec['QKBH']; ?></td>
+		<td class='t1'><?php echo $rec['QKTXM']; ?></td>
+		<td><?php echo $rec['QKZWMC']; ?></td>
+		<td class='t2'><?php echo $rec['QKYWMC']; ?></td>
+		<td><?php echo $rec['CBH']; ?></td>
+		<td><?php echo $rec['BJB']; ?></td>
+		<td><?php echo $rec['ZB']; ?></td>
+		<td><?php echo $rec['DJ']; ?></td>
+		<td><?php echo $rec['CKNY']; ?></td>
+		<td><?php echo $rec['NH']; ?></td>
+		<td><?php echo $rec['JH']; ?></td>
+		<td><?php echo $rec['ZQH']; ?></td>
+		<td><?php echo $rec['FLH']; ?></td>
+		<td><?php echo $rec['ZGYZM']; ?></td>
+		<td><?php echo $rec['YZM']; ?></td>
+		<td><?php echo $rec['QKLBM']; ?></td>
+		<td><?php echo $rec['QKZTM']; ?></td>
+		<td>
+			<a href='?c=Periodical&a=del&QKBH=<?php echo $rec['QKBH']; ?>' onclick='return queren()'>删除</a>
+		</td>
+		<td>
+			<a href='?c=Periodical&a=detail&QKBH=<?php echo $rec['QKBH']; ?>' >详细</a>
+		</td>
+		<td>
+			<a href='?c=Periodical&a=Edit&QKBH=<?php echo $rec['QKBH']; ?>' >修改</a>
+		</td>
+	</tr>
+	<?php
+	}
+	?>
+<tr > <td colspan="100" align="center">
+          <a href="?c=Periodical&a=Index&page=1">首页</a>
+          <a href="?c=Periodical&a=Index&page=<?php echo $prev;?>">上一页</a>
+          <a href="?c=Periodical&a=Index&page=<?php echo "$next";?>">下一页</a>
+          <a href="?c=Periodical&a=Index&page=<?php echo $pages;?>">尾页</a>
+          <a href=""></a>
+	 </td> </tr>
+</table>
+<br />
+<hr />
+
+<br />
+当前总数：<?php echo $data2;?>
+<hr />
+
+</body>
+</html>
+<script>
+	function queren(){
+		return window.confirm("你真的要删除吗？");
+	}
+</script>

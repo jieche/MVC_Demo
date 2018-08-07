@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>网页标题</title>
+	<meta name="keywords" content="关键字列表" />
+	<meta name="description" content="网页描述" />
+	<link rel="stylesheet" type="text/css" href="" />
+	<link rel="stylesheet" type="text/css" href="images/001.css">
+	
+	<script type="text/javascript"></script>
+</head>
+<body>
+
+<hr />
+
+<a href='?c=PeriodicalZD&a=ShowForm' >添加</a>
+列表：
+
+
+<table border='1' class="tb">
+	<tr class="b1">
+   	<th>期刊订购号</th>
+   	<th>期刊编号</th>
+   	<th>预订价格</th>
+   	<th>预订册数</th>
+   	<th>预订年度</th>
+   	<th>获得方式码</th>
+   	<th>征订人职工号</th>
+   	<th>备注</th>
+   	<th colspan="3">  操作</th>
+   </tr>
+	<?php
+	foreach( $data1 as  $key => $rec )
+	{
+	?>
+	<tr>
+		<td><?php echo $rec['QKDGH']; ?></td>
+		<td class='t1'><?php echo $rec['QKBH']; ?></td>
+		<td><?php echo $rec['YDJG']; ?></td>
+		<td class='t2'><?php echo $rec['YDCS']; ?></td>
+		<td><?php echo $rec['YDND']; ?></td>
+		<td><?php echo $rec['HDFSM']; ?></td>
+		<td><?php echo $rec['ZDRZGH']; ?></td>
+		<td><?php echo $rec['BZ']; ?></td>
+		
+		<td>
+			<a href='?c=PeriodicalZD&a=del&QKDGH=<?php echo $rec['QKDGH']; ?>' onclick='return queren()'>删除</a>
+		</td>
+		<td>
+			<a href='?c=PeriodicalZD&a=detail&QKDGH=<?php echo $rec['QKDGH']; ?>' >详细</a>
+		</td>
+		<td>
+			<a href='?c=PeriodicalZD&a=Edit&QKDGH=<?php echo $rec['QKDGH']; ?>' >修改</a>
+		</td>
+	</tr>
+	<?php
+	}
+	?>
+<tr > <td colspan="100" align="center">
+          <a href="?c=PeriodicalZD&a=Index&page=1">首页</a>
+          <a href="?c=PeriodicalZD&a=Index&page=<?php echo $prev;?>">上一页</a>
+          <a href="?c=PeriodicalZD&a=Index&page=<?php echo "$next";?>">下一页</a>
+          <a href="?c=PeriodicalZD&a=Index&page=<?php echo $pages;?>">尾页</a>
+          <a href=""></a>
+	 </td></tr>
+</table>
+<br />
+<hr />
+
+<br />
+当前总数：<?php echo $data2;?>
+<hr />
+
+</body>
+</html>
+<script>
+	function queren(){
+		return window.confirm("你真的要删除吗？");
+	}
+</script>
